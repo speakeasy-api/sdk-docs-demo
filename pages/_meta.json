@@ -1,0 +1,12 @@
+{
+  "reference": {
+    "title": "Reference",
+    "type": "page",
+    "display": "hidden"
+  },
+  "reference_navlink": {
+    "title": "Reference",
+    "href": "/reference/home",
+    "type": "page"
+  }
+}
