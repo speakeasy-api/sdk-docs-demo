@@ -4,9 +4,9 @@ generation:
   singleTagPerOp: false
 features:
   docs:
-    core: 0.19.0
+    core: 0.19.1
     errors: 0.1.0
-    examples: 0.1.0
+    examples: 0.1.1
     globalSecurity: 0.1.0
     globalServerURLs: 0.1.0
     inputOutputModels: 0.1.0

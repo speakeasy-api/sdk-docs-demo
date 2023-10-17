@@ -192,10 +192,11 @@ components/Message/index.tsx
 components/Message/styles.module.scss
 components/NavItem/index.tsx
 components/NavItem/styles.module.scss
+components/Section/section.tsx
+components/Section/styles.module.scss
 components/ThemeToggle/index.tsx
 components/ThemeToggle/styles.module.scss
 components/collapsible.tsx
-components/docsSection.tsx
 components/head.tsx
 components/parameters.tsx
 components/rootContainer.tsx
@@ -236,10 +237,10 @@ styles/antd/antd.cleanui.scss
 styles/antd/import/collapse.scss
 styles/antd/import/select.scss
 styles/antd/import/tabs.scss
+styles/globals.css
 styles/index.scss
 styles/libs/codeThemes.scss
 styles/libs/nextra.scss
-styles/styles.css
 styles/utils/_colors.scss
 styles/utils/_mixins.scss
 styles/utils/_variables.scss

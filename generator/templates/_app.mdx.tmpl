@@ -1,0 +1,19 @@
+import { createElement } from 'react';
+
+import { ScrollManager, MultiPageContext } from 'components/scrollManager';
+
+import genApp from '{{$.ImportPath}}';
+
+import '@/styles/index.scss';
+
+export default function App(props) {
+  const renderedApp = createElement(genApp, props);
+
+  return (
+    <MultiPageContext.Provider value={ {{$.IsMultipage}} }>
+      <ScrollManager>
+        {renderedApp}
+      </ScrollManager>
+    </MultiPageContext.Provider>
+  )
+}
