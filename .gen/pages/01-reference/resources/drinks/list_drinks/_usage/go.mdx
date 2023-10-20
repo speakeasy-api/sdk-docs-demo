@@ -14,7 +14,7 @@ func main() {
     )
 
 
-    var drinkType *shared.DrinkType = shared.DrinkTypeSpirit
+    var drinkType *shared.DrinkType = shared.DrinkTypeWine
 
     ctx := context.Background()
     res, err := s.Drinks.ListDrinks(ctx, drinkType)

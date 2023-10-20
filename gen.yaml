@@ -4,13 +4,19 @@ generation:
   singleTagPerOp: false
 features:
   docs:
-    core: 0.23.0
+    core: 0.24.0
     errors: 0.1.0
     examples: 0.1.1
     globalSecurity: 0.1.0
     globalServerURLs: 0.1.0
     inputOutputModels: 0.1.0
     serverIDs: 0.1.0
+csharp:
+  version: 0.0.1
+  author: Speakeasy
+  dotnetVersion: net5.0
+  maxMethodParams: 4
+  packageName: openapi
 docs:
   version: ""
 go:
@@ -32,5 +38,10 @@ typescript:
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
+  maxMethodParams: 4
+  packageName: openapi
+unity:
+  version: 0.0.1
+  author: Speakeasy
   maxMethodParams: 4
   packageName: openapi

@@ -7,7 +7,7 @@ import { DrinkType } from "openapi/dist/sdk/models/shared";
   const sdk = new SDK({
     apiKey: "",
   });
-const drinkType: DrinkType = DrinkType.Spirit;
+const drinkType: DrinkType = DrinkType.Wine;
 
   const res = await sdk.drinks.listDrinks(drinkType);
 

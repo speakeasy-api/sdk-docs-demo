@@ -10,12 +10,12 @@ import { ErrorT, OrderInput, OrderType } from "openapi/dist/sdk/models/shared";
   });
 const requestBody: shared.OrderInput[] = [
   {
-    productCode: "APM-1F2D3",
-    quantity: 544883,
+    productCode: "NAC-3F2D1",
+    quantity: 715190,
     type: OrderType.Ingredient,
   },
 ];
-const callbackUrl: string = "Sol";
+const callbackUrl: string = "string";
 
   const res = await sdk.orders.createOrder(requestBody, callbackUrl);
 
