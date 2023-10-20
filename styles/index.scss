@@ -4,7 +4,6 @@
 @import 'utils/mixins';
 @import 'libs/codeThemes';
 @import 'libs/nextra';
-@import 'antd/antd.cleanui';
 
 @import './globals.css';
 
@@ -16,7 +15,9 @@
   --text-heading: #222;
   --text-body: #4C4C4C;
   --text-heading-opacity: 1;
-  --text-link: #11D864;
+  --text-link: oklch(50% .2 145);
+  --text-link-hover: oklch(70% .25 145);
+  --text-emphasis: oklch(40% .03 145);
   --gradient-heading: linear-gradient(90deg, #34FF00 -1.69%, #00DCE4 5.47%, #01D2EF 15.51%);
   --select-hover: #11D8641F;
   --select-text: #4C4C4C;
@@ -32,7 +33,9 @@
     --text-body: #ACACAC;
     --text-heading: #ffffff;
     --text-heading-opacity: 1;
-    --text-link: #67FF82;
+    --text-link: oklch(90% .2 145);
+    --text-link-hover: oklch(100% .5 145);
+    --text-emphasis: oklch(80% .05 145);
     --gradient-heading: linear-gradient(90deg, #91FF75 -1.69%, #4AEBF1 6.75%, #42E8FF 15.51%);
     --select-hover: #3148367A;
     --select-text: #E3E5E8;
@@ -237,9 +240,8 @@ article {
 
 table {
   //width: 600px;  // Will test this css function for table responsive (width: clamp(320px, 600px, 600px);)!!!
-  border: 1px solid var(--code-block-border);
-  @include generatePxToRem(border-radius, 16);
-  @include generatePxToRem(margin, 20 0);
+  //border: 1px solid var(--code-block-border);
+  //@include generatePxToRem(border-radius, 16);
   overflow: initial !important;
 
   thead {
@@ -259,13 +261,13 @@ table {
       &:last-child {
         > td {
 
-          &:first-child {
-            @include generatePxToRem(border-radius, 0 0 0 16, !important);
-          }
-
-          &:last-child {
-            @include generatePxToRem(border-radius, 0 0 16 0, !important);
-          }
+          //&:first-child {
+          //  @include generatePxToRem(border-radius, 0 0 0 16, !important);
+          //}
+          //
+          //&:last-child {
+          //  @include generatePxToRem(border-radius, 0 0 16 0, !important);
+          //}
         }
       }
 

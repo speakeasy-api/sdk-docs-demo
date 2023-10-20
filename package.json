@@ -1,8 +1,7 @@
 {
   "name": "<no value>",
   "version": "",
-  "author": "<no value>",
-  "description": "SDK docs",
+  "description": "Nextra docs template",
   "private": true,
   "scripts": {
     "watch": "while sleep 5; do make; done",
@@ -14,8 +13,8 @@
     "build": "npm run next:build",
     "start": "next start",
     "type-check": "tsc --noEmit",
-    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "lint": "eslint --ext .ts,.js,.tsx .",
+    "format": "npm run lint -- --fix",
     "postinstall": "husky install",
     "precommit": "lint-staged"
   },
@@ -27,28 +26,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+"
   },
-  "license": "MIT",
+  "author": "<no value>",
+  "license": "Elastic License 2.0",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "",
   "dependencies": {
+    "@code-hike/mdx": "^0.10.0-next.1",
     "@mdx-js/react": "^2.3.0",
     "@orama/plugin-nextra": "^1.2.3",
+    "@szhsin/react-menu": "4.1.0",
     "@types/lodash": "4.14.199",
-    "antd": "5.9.1",
     "classnames": "2.3.2",
     "lodash": "4.17.21",
-    "next": "^13.4.19",
+    "next": "13.5.5",
     "next-compose-plugins": "^2.2.1",
     "next-themes": "0.2.1",
-    "nextra": "2.12.3",
-    "nextra-theme-docs": "2.12.3",
+    "nextra": "2.13.2",
+    "nextra-theme-docs": "2.13.2",
     "pnpm": "8.7.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-select": "5.7.7",
     "react-switch": "^7.0.0"
   },
   "devDependencies": {

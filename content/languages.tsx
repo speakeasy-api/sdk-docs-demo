@@ -1,16 +1,50 @@
-import React, { ReactElement } from 'react';
-
-import TextHeaderWrapper from '@/HOC/TextHeaderWrapper';
-import LanguageSwitcher from '@/HOC/LanguageSwitcher';
-import newLanguageProvider from 'HOC/LanguageProvider';
+import React, {
+  Children,
+  ReactElement,
+  ReactNode,
+  useContext,
+  useState,
+} from 'react';
 import { Columns, RHS } from '@/components/Columns';
-import { Parameters } from '@/components/parameters';
+import { Parameters, Response } from '@/components/Parameters';
+import { LanguageContext } from '@/utils/contexts/languageContext';
+import { LinkableContext } from '@/utils/contexts/linkableContext';
 
-// REPLACE USAGE WITH HOC/LanguageProvider
-export const LanguageProvider = newLanguageProvider;
+export const Languages = [
+  'go',
+  'typescript',
+  'python',
+];
+export type Language = (typeof Languages)[number];
 
-// REPLACE USAGE WITH HOC/LanguageSwitcher
-export const LanguageSwitch = LanguageSwitcher;
+export const LanguageProvider = (props: { children: ReactNode }) => {
+  const [language, setLanguage] = useState<Language>('go');
+  const context = {
+    language,
+    setLanguage,
+    languages: Languages,
+  };
+
+  const childrenArray = Children.toArray(props.children);
+
+  return (
+    <LanguageContext.Provider value={context}>
+      {childrenArray.map((child) => child)}
+    </LanguageContext.Provider>
+  );
+};
+
+export const LanguageSwitch = (props: {
+  langToContent: Partial<Record<Language, JSX.Element>>;
+}) => {
+  const { language } = useContext(LanguageContext);
+
+  return (
+    <LinkableContext.Provider value={false}>
+      {props.langToContent[language]}
+    </LinkableContext.Provider>
+  );
+};
 
 export const LanguageOperation = (props: {
   usage: ReactElement;
@@ -19,8 +53,7 @@ export const LanguageOperation = (props: {
 }) => (
   <Columns>
     <Parameters>{props.parameters}</Parameters>
-    <TextHeaderWrapper headingType='h3'>Response</TextHeaderWrapper>
-    {props.response}
+    <Response>{props.response}</Response>
     <RHS>{props.usage}</RHS>
   </Columns>
 );

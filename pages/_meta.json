@@ -3,13 +3,13 @@
     "title": "Home",
     "href": "/home"
   },
+  "-- guides": {
+    "title": "Guides",
+    "type": "separator"
+  },
   "installation": {
     "title": "Installation",
     "href": "/installation"
-  },
-  "pagination": {
-    "title": "Pagination",
-    "href": "/pagination"
   },
   "-- resources": {
     "title": "Resources",

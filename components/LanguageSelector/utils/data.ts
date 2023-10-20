@@ -1,7 +1,12 @@
-import TypeScript from '@/icons/TypeScript';
-import { Language } from '@/utils/enums/language';
-import Go from '@/icons/Go';
 import React from 'react';
+
+import TypeScript from '@/icons/languages/typescript';
+import Go from '@/icons/languages/go';
+import Java from '@/icons/languages/java';
+import Python from '@/icons/languages/python';
+import CSharp from '@/icons/languages/csharp';
+import Unity from '@/icons/languages/unity';
+import { Language } from '@/content/languages';
 
 type languageInfo = {
   title: string;
@@ -9,12 +14,28 @@ type languageInfo = {
 };
 
 export const languageData: Record<Language, languageInfo> = {
-  'typescript': {
+  typescript: {
     title: 'TypeScript',
     Icon: TypeScript,
   },
-  'go': {
+  go: {
     title: 'Go',
     Icon: Go,
+  },
+  python: {
+    title: 'Python',
+    Icon: Python,
+  },
+  java: {
+    title: 'Java',
+    Icon: Java,
+  },
+  csharp: {
+    title: 'C#',
+    Icon: CSharp,
+  },
+  unity: {
+    title: 'Unity',
+    Icon: Unity,
   },
 };

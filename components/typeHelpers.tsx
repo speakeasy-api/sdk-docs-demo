@@ -37,14 +37,15 @@ export const splitMDXContentChildrenByType = (
 export const splitElementsByType = (
   elements: React.ReactElement[],
   type: (props: { children: React.ReactNode }) => React.JSX.Element,
-): [React.ReactElement[], React.ReactElement[]] => partition(elements, (e: any) => e?.type === type);
+): [React.ReactElement[], React.ReactElement[]] =>
+  partition(elements, (e: any) => e?.type === type);
 
 export const typeMatches = (
   e: React.ReactNode,
   type: () => React.JSX.Element,
 ): boolean => 'type' in (e as any) && (e as any).type === type;
 
-export const splitAround = <T, >(a: T[], fn: (e: T) => boolean): [T[], T[]] => {
+export const splitAround = <T,>(a: T[], fn: (e: T) => boolean): [T[], T[]] => {
   const breakIndex = a.findIndex(fn);
 
   if (breakIndex === -1) {
@@ -63,7 +64,7 @@ export const separateHeadingsAndOthers = (elements: any) => {
   for (let i = 0; i < elements.length; i++) {
     // Check if the element is a React element
     if (elements[i]?.['$$typeof'] === Symbol.for('react.element')) {
-      const elementType = elements[i].type.name?.toLowerCase();
+      const elementType = elements[i].type?.name?.toLowerCase();
 
       // Check if the element type is one of the headings
       if (headings.includes(elementType)) {
